@@ -294,7 +294,7 @@ packages:
     version: 6.0.2
     engines: {node: '>= 6.0.0'}
     dependencies:
-      debug: registry.npmmirror.com/debug/4.3.1
+      debug: registry.npmmirror.com/debug/4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -845,7 +845,7 @@ packages:
     engines: {node: '>= 10.17.0'}
     hasBin: true
     dependencies:
-      debug: registry.npmmirror.com/debug/4.3.1
+      debug: registry.npmmirror.com/debug/4.3.4
       get-stream: registry.npmmirror.com/get-stream/5.2.0
       yauzl: registry.npmmirror.com/yauzl/2.10.0
     optionalDependencies:
@@ -1185,7 +1185,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       agent-base: registry.npmmirror.com/agent-base/6.0.2
-      debug: registry.npmmirror.com/debug/4.3.1
+      debug: registry.npmmirror.com/debug/4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
