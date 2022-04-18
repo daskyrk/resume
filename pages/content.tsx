@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import resume from '../resume'
@@ -224,7 +223,7 @@ const Summary = () => {
 const NameAndAvatar = ({ }) => {
   return (
     <div className='flex w-1/3'>
-      <Image width={128} height={128} className="rounded-full w-32 rotate-[-32deg] shadow-lg print:shadow-none" src={resume.avatar} alt="avatar" />
+      <img width={128} height={128} className="rounded-full w-32 rotate-[-32deg] shadow-lg print:shadow-none" src={resume.avatar} alt="avatar" />
       <div className="ml-8 flex flex-col justify-center">
         <div className="text-4xl">{resume.name}</div>
         <div className="mt-1 text-sm text-gray-500">{resume.title}</div>
