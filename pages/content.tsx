@@ -196,7 +196,7 @@ const Skills = () => {
       {Object.keys(logoMap).map((key) => {
         const { logo, percent } = logoMap[key as keyof typeof logoMap];
         return (
-          <div className='flex items-center justify-between mb-2'>
+          <div key={key} className='flex items-center justify-between mb-2'>
             <img key={key} src={logo} alt={key} width="24" height="24" />
             <div>
               {new Array(5).fill(1).map((_, index) => <span key={index} className={`print-bg inline-block w-2 h-2 border border-gray-600 ${percent > index ? 'bg-gray-600' : ''} ml-1`} />)}
@@ -223,7 +223,7 @@ const Summary = () => {
 const NameAndAvatar = ({ }) => {
   return (
     <div className='flex w-1/3'>
-      <img className="rounded-full w-32 rotate-[-32deg] shadow-lg" src={resume.avatar} alt="avatar" />
+      <img className="rounded-full w-32 rotate-[-32deg] shadow-lg print:shadow-none" src={resume.avatar} alt="avatar" />
       <div className="ml-8 flex flex-col justify-center">
         <div className="text-4xl">{resume.name}</div>
         <div className="mt-1 text-sm text-gray-500">{resume.title}</div>
