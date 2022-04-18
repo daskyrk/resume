@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import resume from '../resume'
@@ -37,7 +38,7 @@ const iconMap = {
 }
 const Icon = ({ type, size = 20 }: { type: keyof typeof iconMap, size?: number }) => {
   // return iconMap[type]
-  return <img src={`/svg/icon-${type}.svg`} width={size} height={size} />
+  return <img src={`/svg/icon-${type}.svg`} width={size} height={size} alt={type} />
     ;
 }
 
@@ -76,14 +77,14 @@ const Projects = () => {
       {resume.projects.map(({ name, content, start, end }, index) => (
         <div key={name} className="mb-8">
           <p className="text-lg font-bold">{name}</p>
-          <p className='text-sm text-gray-600'>
+          <div className='text-sm text-gray-600'>
             <span className="font-bold mr-4">{start} - {end}</span>
             <ul className="mt-2 list-inside list-disc space-y-2">
               {
                 content.split('\n').map((a: string, index: number) => a.length ? <li key={index} className="text-sm">{ParseMark(a)}</li> : null)
               }
             </ul>
-          </p>
+          </div>
         </div>
       ))}
     </>
@@ -223,7 +224,7 @@ const Summary = () => {
 const NameAndAvatar = ({ }) => {
   return (
     <div className='flex w-1/3'>
-      <img className="rounded-full w-32 rotate-[-32deg] shadow-lg print:shadow-none" src={resume.avatar} alt="avatar" />
+      <Image width={128} height={128} className="rounded-full w-32 rotate-[-32deg] shadow-lg print:shadow-none" src={resume.avatar} alt="avatar" />
       <div className="ml-8 flex flex-col justify-center">
         <div className="text-4xl">{resume.name}</div>
         <div className="mt-1 text-sm text-gray-500">{resume.title}</div>
