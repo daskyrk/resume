@@ -20,7 +20,11 @@ const Home: NextPage = () => {
             <h1>Hello</h1>
             <h2 className='text-3xl'>This is my resume</h2>
           </div>
-          <a className='inline-flex flex-col mt-8 items-center p-1 rounded hover:bg-gray-200' href="/lijun-resume.pdf" download>
+          <a className='inline-flex flex-col w-24 mt-8 items-center px-1 py-2 rounded hover:bg-gray-200' href="https://github.com/daskyrk" target="_blank">
+            <img src="/svg/icon-github.svg" width="40" height="40" alt="github" />
+            <span className='text-sm mt-1'>个人 Github</span>
+          </a>
+          <a className='inline-flex flex-col w-24 mt-8 items-center px-1 py-2 rounded hover:bg-gray-200' href="/lijun-resume.pdf" download>
             <img src="/svg/icon-download.svg" width="40" height="40" alt="download" />
             <span className='text-sm mt-1'>下载 pdf</span>
           </a>
