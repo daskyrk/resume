@@ -111,7 +111,7 @@ const Projects = () => {
   )
 }
 
-const Tag = ({ text }: { text: string }) => <span className="print-bg inline-block px-2 py-1 rounded-sm text-xs text-white bg-slate-600 mr-1 mb-1 shadow">{text}</span>
+const Tag = ({ text }: { text: string }) => <span className="print-bg inline-block px-2 py-1 rounded-sm text-xs text-white bg-slate-600 mr-1 mb-1">{text}</span>
 
 const Education = () => {
   return (
@@ -120,7 +120,7 @@ const Education = () => {
         <div key={name} className="mb-8">
           <p className="inline-flex items-center text-lg font-bold">{name}
             {is211
-              ? <span className='print-bg px-1 py-[2px] rounded-sm text-xs text-white bg-slate-600 mr-1 mb-1 shadow'>211</span>
+              ? <span className='print-bg px-1 py-[2px] rounded-sm text-xs text-white bg-slate-600 mr-1 mb-1'>211</span>
               : null}
           </p>
           <p className='text-sm text-gray-600'>
@@ -243,12 +243,12 @@ const Summary = () => {
 
 const NameAndAvatar = ({ }) => {
   return (
-    <div className='flex w-1/3'>
+    <div className='flex w-1/5 pr-8'>
       <div>
-        <img width={128} height={128} className="rounded-full w-32 rotate-[-32deg] shadow-lg print:shadow-none" src={resume.avatar} alt="avatar" />
+        <img width={64} height={64} className="rounded-full rotate-[-32deg] shadow-lg print:shadow-none" src={resume.avatar} alt="avatar" />
       </div>
-      <div className="ml-8 flex flex-col justify-center">
-        <div className="text-4xl">{resume.name}</div>
+      <div className="ml-2 flex flex-col justify-center">
+        <div className="text-2xl">{resume.name}</div>
         <div className="mt-1 text-sm text-gray-500">{resume.title}</div>
       </div>
     </div>
