@@ -218,7 +218,7 @@ const Skills = () => {
         const { logo, percent } = logoMap[key as keyof typeof logoMap];
         return (
           <div key={key} className='flex items-center justify-between mb-2'>
-            <img key={key} src={logo} alt={key} width="24" height="24" />
+            <img key={key} src={logo} alt={key} width="36" height="36" />
             <div>
               {new Array(5).fill(1).map((_, index) => <span key={index} className={`print-bg inline-block w-2 h-2 rounded-full border border-gray-600 ${percent > index ? 'bg-gray-600' : ''} ml-1`} />)}
             </div>
