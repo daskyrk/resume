@@ -20,7 +20,7 @@ const Home: NextPage = () => {
         <meta name="description" content="李骏的个人简历" />
       </Head>
       <div className="flex justify-center p-8 pr-12 pb-12 min-w-[1280px]">
-        <div className="sticky self-start flex-1 mt-12 items-end text-right" style={{ top: 20 }}>
+        <div className="sticky self-start mt-12 items-end text-right" style={{ top: 20 }}>
           <div className='font-bold text-6xl'>
             <h1>Hello</h1>
             <h2 className='text-3xl'>This is my resume</h2>
