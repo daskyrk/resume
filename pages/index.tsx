@@ -14,17 +14,17 @@ const Home: NextPage = () => {
         <meta name="keywords" content="李骏,简历,LiJun,daskyrk,resume" />
         <meta name="description" content="李骏的个人简历" />
       </Head>
-      <div className="flex justify-between p-8 pr-16">
+      <div className="flex justify-center p-8 pr-12 pb-12 min-w-[1280px]">
         <div className="sticky self-start flex-1 mt-12 items-end text-right" style={{ top: 20 }}>
           <div className='font-bold text-6xl'>
             <h1>Hello</h1>
             <h2 className='text-3xl'>This is my resume</h2>
           </div>
-          <a className='inline-flex flex-col w-24 mt-8 items-center px-1 py-2 rounded hover:bg-gray-200' href="https://github.com/daskyrk" target="_blank">
+          <a className='inline-flex flex-col w-24 mt-8 items-center py-2 rounded hover:bg-gray-200' href="https://github.com/daskyrk" target="_blank">
             <img src="/svg/icon-github.svg" width="40" height="40" alt="github" />
             <span className='text-sm mt-1'>个人 Github</span>
           </a>
-          <a className='inline-flex flex-col w-24 mt-8 items-center px-1 py-2 rounded hover:bg-gray-200' href="/lijun-resume.pdf" download>
+          <a className='inline-flex flex-col w-24 mt-8 items-center py-2 rounded hover:bg-gray-200' href="/lijun-resume.pdf" download>
             <img src="/svg/icon-download.svg" width="40" height="40" alt="download" />
             <span className='text-sm mt-1'>下载 pdf</span>
           </a>

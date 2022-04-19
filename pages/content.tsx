@@ -20,7 +20,7 @@ const ParseMark = (str: string) => {
     after = after.slice(before.length + m.length);
     contentList.push(before);
     if (url) {
-      contentList.push(<Link key={text} href={url}><a className='underline text-blue-600' target="_blank" rel="noopener noreferrer">{text}</a></Link>);
+      contentList.push(<Link key={text} href={url}><a className='underline text-blue-800' target="_blank" rel="noopener noreferrer">{text}</a></Link>);
     } else {
       contentList.push(<span key={text} className='font-bold'>{text}</span>)
     }
@@ -56,14 +56,25 @@ const Companies = () => {
       {resume.companies.map(({ start, end, title, name, address, content }, index) => (
         <div key={name} className="mb-8">
           <p className="text-lg font-bold">{title}</p>
-          <p className='text-sm text-gray-600'>
-            <span className="font-bold mr-4">{start} - {end}</span>{name}
+          <p className='flex mb-2 text-sm text-gray-600'>
+            <span className="inline-block w-40 font-bold">{start} - {end}</span>
+            <span>{name} · {address}</span>
           </p>
-          <ul className="mt-2 list-inside list-disc space-y-2">
-            {
-              content.split('\n').map((a: string, index: number) => a.length ? <li key={index} className="text-sm">{ParseMark(a)}</li> : null)
-            }
-          </ul>
+          {
+            content.split('\n').map((a: string, index: number) => {
+              if (!a.length) return null;
+              if (a.startsWith('*')) {
+                return (
+                  <ul key={index} className="list-inside list-disc space-y-2">
+                    <li className="text-sm">{ParseMark(a.replace(/^\*\s*/, ''))}</li>
+                  </ul>
+                )
+              }
+              return (
+                <div key={index} className="mt-4 mb-2">{ParseMark(a)}</div>
+              );
+            })
+          }
         </div>
       ))}
     </>
@@ -75,14 +86,24 @@ const Projects = () => {
     <>
       {resume.projects.map(({ name, content, start, end }, index) => (
         <div key={name} className="mb-8">
-          <p className="text-lg font-bold">{name}</p>
+          <p className="text-lg font-bold">{ParseMark(name)}</p>
           <div className='text-sm text-gray-600'>
             <span className="font-bold mr-4">{start} - {end}</span>
-            <ul className="mt-2 list-inside list-disc space-y-2">
-              {
-                content.split('\n').map((a: string, index: number) => a.length ? <li key={index} className="text-sm">{ParseMark(a)}</li> : null)
-              }
-            </ul>
+            {
+              content.split('\n').map((a: string, index: number) => {
+                if (!a.length) return null;
+                if (a.startsWith('*')) {
+                  return (
+                    <ul key={index} className="list-inside list-disc space-y-2">
+                      <li className="text-sm">{ParseMark(a.replace(/^\*\s*/, ''))}</li>
+                    </ul>
+                  )
+                }
+                return (
+                  <div key={index} className="mt-4 mb-2">{ParseMark(a)}</div>
+                );
+              })
+            }
           </div>
         </div>
       ))}
@@ -199,7 +220,7 @@ const Skills = () => {
           <div key={key} className='flex items-center justify-between mb-2'>
             <img key={key} src={logo} alt={key} width="24" height="24" />
             <div>
-              {new Array(5).fill(1).map((_, index) => <span key={index} className={`print-bg inline-block w-2 h-2 border border-gray-600 ${percent > index ? 'bg-gray-600' : ''} ml-1`} />)}
+              {new Array(5).fill(1).map((_, index) => <span key={index} className={`print-bg inline-block w-2 h-2 rounded-full border border-gray-600 ${percent > index ? 'bg-gray-600' : ''} ml-1`} />)}
             </div>
           </div>
         )
@@ -223,7 +244,9 @@ const Summary = () => {
 const NameAndAvatar = ({ }) => {
   return (
     <div className='flex w-1/3'>
-      <img width={128} height={128} className="rounded-full w-32 rotate-[-32deg] shadow-lg print:shadow-none" src={resume.avatar} alt="avatar" />
+      <div>
+        <img width={128} height={128} className="rounded-full w-32 rotate-[-32deg] shadow-lg print:shadow-none" src={resume.avatar} alt="avatar" />
+      </div>
       <div className="ml-8 flex flex-col justify-center">
         <div className="text-4xl">{resume.name}</div>
         <div className="mt-1 text-sm text-gray-500">{resume.title}</div>
