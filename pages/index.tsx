@@ -2,8 +2,13 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import React from 'react'
 import Content from './content';
+import TagManager from 'react-gtm-module';
+
 
 const Home: NextPage = () => {
+  React.useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-PH53BDH' });
+  }, []);
 
   return (
     <>
