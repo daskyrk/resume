@@ -65,7 +65,7 @@ const Companies = () => {
               if (!a.length) return null;
               if (a.startsWith('*')) {
                 return (
-                  <ul key={index} className="list-inside list-disc space-y-2">
+                  <ul key={index} className="list-inside list-disc mb-2">
                     <li className="text-sm">{ParseMark(a.replace(/^\*\s*/, ''))}</li>
                   </ul>
                 )
@@ -94,7 +94,7 @@ const Projects = () => {
                 if (!a.length) return null;
                 if (a.startsWith('*')) {
                   return (
-                    <ul key={index} className="list-inside list-disc space-y-2">
+                    <ul key={index} className="list-inside list-disc mb-2">
                       <li className="text-sm">{ParseMark(a.replace(/^\*\s*/, ''))}</li>
                     </ul>
                   )
