@@ -145,82 +145,102 @@ const Skills = () => {
   const logoMap = {
     react: {
       logo: '/svg/react-original-wordmark.svg',
+      name: 'React',
       percent: 5,
     },
     antd: {
       logo: '/svg/ant-design.svg',
+      name: 'AntDesign',
       percent: 5,
     },
     webpack: {
       logo: '/svg/webpack-original.svg',
+      name: 'Webpack',
       percent: 5,
     },
     sass: {
       logo: '/svg/sass-original.svg',
+      name: 'Sass',
       percent: 5,
     },
     typescript: {
       logo: '/svg/typescript-original.svg',
+      name: 'Typescript',
       percent: 4,
     },
     tailwind: {
       logo: '/svg/tailwindcss-icon.svg',
+      name: 'Tailwind',
       percent: 4,
     },
     VuePress: {
       logo: '/svg/VuePress.svg',
+      name: 'VuePress',
       percent: 4,
     },
     nodejs: {
       logo: '/svg/nodejs-original.svg',
+      name: 'Nodejs',
       percent: 4,
     },
     playwright: {
       logo: '/svg/playwright.svg',
+      name: 'Playwright',
       percent: 4,
     },
     jest: {
       logo: '/svg/jestjsio-icon.svg',
+      name: 'Jest',
       percent: 4,
     },
     vue: {
       logo: '/svg/vuejs-original-wordmark.svg',
+      name: 'Vue',
       percent: 3,
     },
     nestjs: {
       logo: '/svg/nestjs-plain.svg',
+      name: 'Nestjs',
       percent: 3,
     },
     nextjs: {
       logo: '/svg/nextjs-original.svg',
+      name: 'Nextjs',
       percent: 3,
     },
     // git: {
     //   logo: '/svg/git-scm-icon.svg',
+    //   name: 'git',
     //   percent: 3,
     // },
     nginx: {
       logo: '/svg/nginx-original.svg',
+      name: 'Nginx',
       percent: 2,
     },
     docker: {
       logo: '/svg/docker-original-wordmark.svg',
+      name: 'Docker',
       percent: 1,
     },
     kubernetes: {
       logo: '/svg/kubernetes-icon.svg',
+      name: 'Kubernetes',
       percent: 1,
     },
   }
   return (
     <div>
       {Object.keys(logoMap).map((key) => {
-        const { logo, percent } = logoMap[key as keyof typeof logoMap];
+        const { logo, percent, name } = logoMap[key as keyof typeof logoMap];
         return (
           <div key={key} className='flex items-center justify-between mb-2'>
             <img key={key} src={logo} alt={key} width="36" height="36" />
-            <div>
-              {new Array(5).fill(1).map((_, index) => <span key={index} className={`print-bg inline-block w-2 h-2 rounded-full border border-gray-600 ${percent > index ? 'bg-gray-600' : ''} ml-1`} />)}
+            <div className='flex flex-col items-end justify-between'>
+              <div className='text-gray-400 text-xs'>{name}</div>
+              <div className='leading-3'>
+                {new Array(5).fill(1).map((_, index) => <span key={index} className={`print-bg inline-block w-2 h-2 rounded-full border border-gray-600 ${percent > index ? 'bg-gray-600' : ''} ml-1`} />)}
+              </div>
             </div>
           </div>
         )
